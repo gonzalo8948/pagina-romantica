@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Pasar el resto de nuestras vidas juntos?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button#yes {
+            background-color: #4caf50;
+            color: white;
+        }
+        button#yes:hover {
+            background-color: #45a049;
+        }
+        button#no {
+            background-color: #f44336;
+            color: white;
+        }
+        button#no:hover {
+            background-color: #e53935;
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Te gustaría pasar el resto de nuestras vidas juntos?</h1>
+    <button id="yes">Sí</button>
+    <button id="no">No</button>
+    <p id="message" style="font-size: 20px; color: #555; margin-top: 20px;"></p>
+
+    <script>
+        const yesButton = document.getElementById('yes');
+        const noButton = document.getElementById('no');
+        const message = document.getElementById('message');
+
+        yesButton.addEventListener('click', () => {
+            message.textContent = '¡sabía que ibas a decir que si!';
+            message.style.color = '#4caf50';
+        });
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>
+
